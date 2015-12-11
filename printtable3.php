@@ -13,6 +13,10 @@
 		$datetime = date("Ymd") . $hour . date("is");
 	}
 	
+	//数据库用户名和密码
+	$db_user = "";
+	$db_passwd = ""; 
+	
 	$pages = $_POST['pages'];
 	$apartment = $_POST['apartment'];
 	
@@ -99,7 +103,7 @@
 	if ($sum == "0")
 		$total = "";
 	
-    $myDb = mysql_connect("localhost:3306", "root", "hackingme?233333");
+    $myDb = mysql_connect("localhost:3306", $db_user. $db_passwd); 
 	mysql_set_charset("utf8");
 	mysql_select_db("formdb", $myDb);
 	mysql_query("set character set 'utf8'");
