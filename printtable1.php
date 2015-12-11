@@ -79,11 +79,16 @@
 		$total = substr($total, 0, (strlen($total) - 6));
 	}
 	
+	if ($sum == "0")
+		$total = "";
+	echo "<p>$sum</p>";
 	$myDb = mysql_connect("localhost:3306", "root", "hackingme?233333");
 	mysql_set_charset("utf8");
 	mysql_select_db("formdb", $myDb);
 	mysql_query("set character set 'utf8'");
 	mysql_query("set names 'utf8'");
+	mysql_query("insert into form1(id, username, apartment, total, remark) values($datetime, \"$user\", \"$apartment\", $sum, \"$remark\")");
+	
 ?>
 <html>
 <head>
