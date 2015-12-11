@@ -86,7 +86,7 @@
 	if ($sum == "0")
 		$total = "";
 	echo "<p>$sum</p>";
-    $myDb = mysql_connect("localhost:3306", $db_user. $db_passwd); 
+    $myDb = mysql_connect("localhost:3306", $db_user, $db_passwd); 
 	mysql_set_charset("utf8");
 	mysql_select_db("formdb", $myDb);
 	mysql_query("set character set 'utf8'");
